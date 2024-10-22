@@ -1,0 +1,30 @@
+<form>
+  <p>
+    <label>Title</label>
+    <input name="titel" id="title" />
+  </p>
+
+  <p>
+    <label>Request</label>
+    <textarea name="request" rows="3"> </textarea>
+  </p>
+  <p>
+    <!-- <button>
+        <span>
+            Submit
+        </span>
+        <span class="icon">
+            ▶
+        </span>
+    </button> -->
+    <!-- Replacing the button with the shared button component -->
+    <!-- <app-button/>  -->
+    <!-- Above code is just and wrapper and not actully inherting the button, we can do so by extending the button -->
+    <button appButton>
+      Submit
+      <!-- <span clss=".icon">▶</span> --> <!-- This will wrap the icon with anoter span-->
+      <span ngProjectAs="icon">▶</span>
+    </button>
+    <!-- Import ButtonComponent to the TS file of this new-ticket component-->
+  </p>
+</form>
