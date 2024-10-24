@@ -19,4 +19,6 @@ export class AppComponent {
   onChangeLifecycleInputText() {
     this.lifecycleInputText = 'Some Random Number: ' + Math.random() * 100;
   }
+
+  
 }

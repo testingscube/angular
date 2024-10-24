@@ -1,3 +1,13 @@
+<div
+  [style]="{
+    'text-align': 'center',
+    'font-size': '40px'
+  }"
+>
+  <a href="https://angular.dev/guide/components/lifecycle"
+    >Angular Lifecycle Documentation Link</a
+  >
+</div>
 <div id="buttons">
   <button (click)="onToggleLifecycleComponentVisibility()">
     Toggle Lifecycle Component Visibility
@@ -8,5 +18,5 @@
 </div>
 
 @if (lifecycleComponentIsVisible) {
-  <app-lifecycle [text]="lifecycleInputText" />
+<app-lifecycle [text]="lifecycleInputText" />
 }
