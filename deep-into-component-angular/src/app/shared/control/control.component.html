@@ -1,0 +1,18 @@
+<!-- <p class="control"> --> <!-- We needed this as in our css we have specified it agains class-->
+  <label>{{ label() }}</label>
+  <!-- <input name="titel" id="title" /> -->
+  <ng-content select="input, textarea" />
+<!-- </p> -->
+
+
+
+<!-- 
+we removed the class and provided the host class in the component
+   host:{
+    class:"control"
+  }
+})
+export class ControlComponent 
+ -->
+
+ 
