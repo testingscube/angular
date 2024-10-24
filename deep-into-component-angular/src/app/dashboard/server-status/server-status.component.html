@@ -1,10 +1,50 @@
-@if (currentStatus === 'online') {
-<p>Servers are online</p>
-<p>All systems are operational.</p>
-} @else if (currentStatus === 'offline') {
-<p>Servers are offline</p>
-<p>Functionality should be restored soon.</p>
-} @else {
-<p>Server status is unknown</p>
-<p>Fetching server status failed.</p>
-}
+<!-- In line below css class status would be only included when this condition is met
+    "currentStatus === 'offline' -->
+<!-- <div [class.status]="currentStatus === 'offline'"> -->
+
+<!-- In code bleow where property binding class with an object containing key and values
+        where KEY represents one css class and value represent boolean value, based on which css
+        would be included or excluded. 
+        ex 
+        [class]={
+            key:value,
+            status:"currentStatus === 'offline'"
+        } based on the condition in the value
+    all the css would be loaded.   -->
+<div
+  [class]="{
+    status: true,
+    'status-online': currentStatus === 'online',
+    'status-offline': currentStatus === 'offline',
+    'status-unknown': currentStatus === 'unknown'
+  }"
+>
+<!-- 
+
+    [style]="{
+    'font-size':'40px' 
+  }"
+
+  same as 
+
+  if using single style
+  [style.fontSize]="'40px'"    // '40px' is used inside as 40px is not valid type script code.
+
+
+  Same as
+  [style]="{
+    fontSize:'40px' 
+  }"
+ -->
+
+  @if (currentStatus === 'online') {
+  <p>Servers are online</p>
+  <p>All systems are operational.</p>
+  } @else if (currentStatus === 'offline') {
+  <p>Servers are offline</p>
+  <p>Functionality should be restored soon.</p>
+  } @else {
+  <p>Server status is unknown</p>
+  <p>Fetching server status failed.</p>
+  }
+</div>
